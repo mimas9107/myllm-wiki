@@ -1,0 +1,20 @@
+# LLM Wiki Git Ignore
+
+# 忽略所有原始素材與專案源碼 (raw/ 目錄)
+# 這些檔案通常體積巨大且包含敏感資訊或二進位檔
+/raw/
+
+# 忽略臨時檔案與快取
+.DS_Store
+Thumbs.db
+__pycache__/
+*.log
+*.tmp
+
+# 忽略本地開發環境
+.venv/
+node_modules/
+
+# 忽略測試用的 Skill 暫存
+test-skill/
+scratch/
