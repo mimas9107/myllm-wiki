@@ -6,12 +6,14 @@ import json
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-# --- 設定區域 ---
+# --- 設定區域：三權分立架構 ---
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 MONITOR_DIR = os.path.join(BASE_DIR, "raw")
-SUMMARY_DIR = os.path.join(BASE_DIR, "raw/summaries")
-TASK_LIST = os.path.join(BASE_DIR, "outputs/pending_tasks.md")
-STATE_FILE = os.path.join(BASE_DIR, "outputs/states.json")
+SENTINEL_DIR = os.path.join(BASE_DIR, "sentinel")
+SUMMARY_DIR = os.path.join(SENTINEL_DIR, "summaries")
+TASK_LIST = os.path.join(SENTINEL_DIR, "tasks.md")
+STATE_FILE = os.path.join(SENTINEL_DIR, "states.json")
+
 OLLAMA_URL = "http://localhost:11434/api/generate"
 MODEL = "qwen2.5:1.5b"
 
@@ -47,11 +49,9 @@ class WikiHandler(FileSystemEventHandler):
             json.dump(self.states, f, indent=2, ensure_ascii=False)
 
     def _get_file_hash(self, file_path):
-        """計算檔案內容的 SHA-256 雜湊值"""
         hasher = hashlib.sha256()
         try:
             with open(file_path, 'rb') as f:
-                # 讀取前 1MB 即可，兼顧效能與準確性
                 buf = f.read(1024 * 1024)
                 hasher.update(buf)
             return hasher.hexdigest()
@@ -91,22 +91,21 @@ class WikiHandler(FileSystemEventHandler):
         
         # 1. 基礎過濾
         parts = abs_path.split(os.sep)
-        if any(d in parts for d in IGNORE_DIRS) or abs_path.startswith(SUMMARY_DIR) or file_name.startswith('.'):
+        if any(d in parts for d in IGNORE_DIRS) or file_name.startswith('.'):
             return
         if file_name in IGNORE_FILENAMES or os.path.splitext(abs_path)[1].lower() not in WHITELIST_EXTS:
             return
 
-        # 2. 雜湊校驗 (核心功能)
+        # 2. 雜湊校驗
         current_hash = self._get_file_hash(abs_path)
         if not current_hash: return
         
         if abs_path in self.states and self.states[abs_path]["hash"] == current_hash:
-            # 內容未變，跳過 AI 處理
             return
 
-        print(f"[*] 內容已變更，開始處理{action_type}: {file_name}")
+        print(f"[*] 處理{action_type}: {file_name}")
         
-        # 3. 讀取與 AI 摘要
+        # 3. AI 摘要
         try:
             ext = os.path.splitext(abs_path)[1].lower()
             if ext in ['.pdf', '.docx', '.odp']:
@@ -120,7 +119,7 @@ class WikiHandler(FileSystemEventHandler):
             print(f"[!] 處理失敗: {e}")
             return
 
-        # 4. 落地摘要與任務，並更新狀態
+        # 4. 落地摘要與任務，更新狀態
         self._save_summary(abs_path, summary_text)
         self._add_to_task_list(abs_path)
         self._save_state(abs_path, current_hash)
@@ -163,7 +162,8 @@ if __name__ == "__main__":
     observer = Observer()
     observer.schedule(WikiHandler(), MONITOR_DIR, recursive=True)
     observer.start()
-    print(f"🚀 Wiki Watchdog (v5-Content-Aware) 啟動成功！")
+    print(f"🚀 Wiki Watchdog (v6) 啟動成功！")
+    print(f"管理目錄: {SENTINEL_DIR}")
     try:
         while True:
             time.sleep(1)

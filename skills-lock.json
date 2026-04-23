@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "llm-wiki-access": {
+      "source": "/home/mimas/projects/llm-wiki/llm-wiki-access",
+      "sourceType": "local",
+      "computedHash": "cc955bf60179d1223e1b1ef628c84138ebb500936a64cd0e0061efd04df25b99"
+    }
+  }
+}

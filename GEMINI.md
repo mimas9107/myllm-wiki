@@ -1,40 +1,57 @@
-# 知識庫規則說明
+# 知識庫管理與維護協定 (Active Wiki Protocol)
 
-## 這個知識庫是什麼
-一份關於 **人工智慧、語言模型、AI 代理人、RAG、個人知識管理與數位孿生** 的個人知識庫。
+> [!IMPORTANT]
+> **警告：本知識庫嚴格執行「原子化更新協定」。**
+> 任何未同步更新 `INDEX.md` 與 `log.md` 的行為皆被視為嚴重的系統錯誤 (System Bug)。
 
-## 資料夾結構
-- raw/：原始素材暫存區，AI 不得修改此資料夾內的任何檔案。
-- wiki/：整理後的知識庫，由 AI 全權維護，使用者不手動編輯。
-- outputs/：AI 產出的報告、回答、分析歸檔。
+## 強制執行清單 (Post-Action Checklist)
+每次建立或修改 Wiki 頁面後，你**必須**確認以下事項已完成：
+1. [ ] **更新 INDEX**: 在 `wiki/INDEX.md` 找到對應分類，手動加入 `[[新頁面名稱]]`。
+2. [ ] **建立雙向聯結**: 
+   - 新頁面底部必須有「相關主題」區塊。
+   - 回頭在被引用的舊頁面加入指向新頁面的連結。
+3. [ ] **紀錄 Log**: 在 `wiki/log.md` 底部新增一筆維護紀錄。
+4. [ ] **標註任務**: 如果是處理 `sentinel/tasks.md` 的任務，必須將其標記為 `[x]`。
 
-## Wiki 維護規則
-- 每個主題建立一份獨立的 .md 檔案，放在 wiki/
-- 每份 wiki 檔案開頭必須有一段摘要
-- 相關主題之間用 [[主題名稱]] 格式互相連結
-- wiki/ 中維護一份 INDEX.md，列出所有主題
-- 當 raw/ 新增素材時，主動更新相關 wiki 文章
+---
 
-## 我的關注方向
-- 人工智慧與語言模型
-- 通用 AI代理人
-- RAG (Retrieval-Augmented Generation)
-- 個人知識管理與數位孿生
+## 如何正確掛載索引 (Indexing Guide)
+如果你不知道新頁面該放在 `INDEX.md` 的哪裡：
+1. **全文檢索關鍵字**: 執行 `rg "相關關鍵字" wiki/` 找出其他 Agent 把它放哪。
+2. **參考現有分類**: 讀取 `wiki/INDEX.md` 的目錄結構。
+3. **主動建議新分類**: 如果現有分類都不適合，請主動在 `INDEX.md` 建立新子類別，嚴禁讓頁面成為孤島。
 
+## 資料夾規則 (Governance)
+- **`raw/`**: 絕對唯讀。禁止修改、禁止寫入、禁止刪除。
+- **`wiki/`**: 核心知識區。Agent 全權維護。
+- **`sentinel/`**: 管理心臟。包含 `tasks.md` (任務清單) 與 `states.json` (雜湊庫)。
+- **`outputs/`**: 正式報告產出。
 
-## 資料夾規則總覽
-### 禁止事項
-- 任何 AI 工具嚴禁修改 `raw/` 資料夾內的檔案。
-- 嚴禁破壞 `GEMINI.md` 與 `INDEX.md` 的結構。
+## 典型工作流範例
+1. **讀取任務**: `cat sentinel/tasks.md`
+2. **執行編譯**: 讀取 `raw/` 素材 -> 撰寫 `wiki/NewPage.md`。
+3. **維護索引**: `vim wiki/INDEX.md` (加入連結)。
+4. **寫入日誌**: `echo "..." >> wiki/log.md`。
+5. **回報完成**: 「已處理任務 X，更新了 INDEX 與 Log。」
 
-### 工具使用規範
-| 工具 | 目標 | 指令位置 |
-| :--- | :--- | :--- |
-| `tree` | **檢視**目錄樹狀結構 | `tree wiki/projects` |
-| `find` | **搜尋**特定檔案名稱 | `find wiki/projects -name "*.md"` |
-| `rg` | **全文檢索**關鍵字 | `rg "search_term" wiki/projects` |
+---
 
-### 工作流程範例
-1. **搜尋**您感興趣的主題：<br>`rg "ESP32" wiki/projects`
-2. **檢視**相關檔案：<br>`tree wiki/projects | grep "ESP32"`
-3. **編輯**維護檔案：<br>`vim wiki/projects/esp-miao.md`
+## YAML 元數據規範 (Metadata Standards)
+所有新建或修改的 Wiki 頁面，必須在其最頂端包含 YAML Header。
+**【嚴格格式與防竄改邊界】**：
+1. Header 必須由兩組 `----` (四個連字號) 包夾，格式建議如下：
+   ----
+   name: [頁面標題]
+   description: [內容摘要描述]
+   contributors: [Antigravity, 其他Agent名稱]
+   ----
+2. **【禁止竄改】**：在新增或修改此 YAML 區塊時，**絕對不可更動或刪除下層（第二組） `----` 之後的任何正文內容**。
+3. **【禁止署名污染】**：**嚴禁**在正文底部加入「由 XXX 生成」、「撰寫者：XXX」等簽名。多 Agent 協作的足跡追蹤，一律透過更新 YAML 的 `contributors` 陣列，以及將詳細動作寫入 `wiki/log.md` 來完成。
+
+## 純文字與標準 Markdown 規範 (No-Emoji Policy)
+為了確保知識庫的專業性與跨平台相容性（特別是在純文字終端環境），本專案嚴格限制表情符號 (Emoji) 的使用：
+1. **全面禁用 Emoji**：在建立新標題、清單或內文時，**絕對禁止**使用任何 Emoji 符號。
+2. **標準格式優先**：請僅使用標準的 Markdown 語法（如 `#`、`-`、`*`、`> `）來區分結構與重點。
+
+---
+*維護者：Antigravity | 協定版本：1.3.1*

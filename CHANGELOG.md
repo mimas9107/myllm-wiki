@@ -1,9 +1,21 @@
 # 變更日誌 (CHANGELOG)
 
-## [1.2.0] - 2026-04-22
-### 🚀 新增 (Added)
-- **內容雜湊校驗 (Content-Aware Processing)**: 使用 SHA-256 雜湊值追蹤檔案內容，避免因重複觸發事件或 Metadata 修改導致的無意義處理。
-- **狀態持久化 (State Persistence)**: 引入 `outputs/states.json` 紀錄已處理檔案的指紋。
+## [1.3.1] - 2026-04-23
+### 優化與系統對齊復原 (Changed)
+- **版本對齊與大災難復原**: 成功自 1.3.0 備份點重建專案，並將核心工作區完全對齊至受 Git 版控之 `myllm-wiki` 目錄，確保專案具備完整防禦與追溯能力。
+- **任務清單與摘要路徑優化**: 將 `outputs/pending_tasks.md` 遷移至 `sentinel/pending_tasks.md`，並將 `outputs/summaries` 遷移至 `sentinel/summaries`，強化管理心臟職責。
+- **無表情符號規範 (No-Emoji Policy)**: 建立純文字與標準 Markdown 規範，移除全專案所有 Emoji，提升終端機相容性與專業度。
+- **嚴格元數據追蹤 (Strict Metadata)**: 導入 YAML Frontmatter 邊界規範，強制以 `contributors: []` 追蹤貢獻，徹底解決多 Agent 協作的正文簽名污染。
+- **防呆與權限邊界重建**: 
+  - `llm-wiki-flush`: 實作嚴格路徑護欄，設立 `raw/` 與 `sentinel/` 絕對禁區，強制實施歸檔而非刪除。
+  - `llm-wiki-lint`: 限定唯讀掃描，報告強制隔離至 `sentinel/`，確保檢測不污染產出區。
+  - `llm-wiki-serendipity`: 寫入最高權限覆寫規則，阻斷 Agent 自主觸發，保證純人工啟動。
+---
+
+## [1.3.0] - 2026-04-23
+### 優化 (Changed)
+- **架構重構**: 引入 `sentinel/` 目錄，將系統管理檔案（摘要、任務清單、雜湊狀態、日誌）與內容檔案（raw/、outputs/）徹底隔離。
+- **路徑解耦**: 確保 `raw/` 目錄保持純淨的唯讀狀態，落實職責分離。
 
 本專案遵循語意化版本規範，並採用自定義的進位規則：
 - 10 PATCH 變更進位為 1 MINOR 變更。
@@ -11,29 +23,20 @@
 
 ---
 
-## [1.1.0] - 2026-04-22
-
-### 🚀 新增 (Added)
-- **防洪熔斷機制 (Flood Protection)**: 偵測到大批量檔案匯入時自動停止摘要，防止系統過載。
-- **精確過濾系統**: 支援副檔名白名單與特定檔名黑名單（過濾 `CMakeLists.txt` 等雜訊檔案）。
-- **智慧型 Prompt**: 根據檔案類型（程式碼 vs 文件）自動切換摘要策略。
-
----
-
 ## [1.0.0] - 2026-04-22
 
-### 🚀 新增 (Added)
+### 新增 (Added)
 - **第一線監控 (Tier 1)**: 實作基於 Python `watchdog` 的守護進程，自動監控 `raw/` 異動。
 - **本地 Ollama 整合**: 自動調用本地模型進行初步摘要與關鍵字提取。
 - **自動任務隊列**: 透過 `outputs/pending_tasks.md` 實現層次化處理的交接機制。
 - **啟動工具**: `start_watchdog.sh` 腳本，簡化部署流程。
 - **專案文檔**: 建立 `README.md`, `QUICKSTART.md`, `CHANGELOG.md`。
 
-### ⚙️ 優化 (Changed)
+### 優化 (Changed)
 - **路徑標準化**: v3 版腳本改採絕對路徑處理，增強在 Linux 環境下的穩定性。
 - **心跳機制**: 監控腳本加入小時級心跳日誌，便於長期觀察運行狀態。
 
-### 🛡️ 安全 (Security)
+### 安全 (Security)
 - **環境隔離**: 推薦使用 `.venv` 虛擬環境，符合 PEP 668 規範。
 
 ---

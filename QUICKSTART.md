@@ -30,7 +30,7 @@ python3 -m venv .venv
 ## 4. 匯整知識 (Tier 2)
 
 當您想要將累積的資訊正式編譯進 Wiki 時，請喚醒您的 AI 代理人並下達指令：
-> 「幫我處理 `pending_tasks.md` 中的任務。」
+> 「幫我處理 `sentinel/tasks.md` 中的任務。」
 
 ## 5. 檢視成果
 

@@ -1,16 +1,20 @@
 #!/bin/bash
 
-# Wiki-Watchdog 啟動腳本
+# Wiki-Watchdog 啟動腳本 (v1.3.1)
 # 用途：自動偵測環境並啟動第一線 (Tier 1) 監控服務
 
 BASE_DIR=$(cd "$(dirname "$0")"; pwd)
 VENV_PATH="$BASE_DIR/.venv"
 SCRIPT_PATH="$BASE_DIR/scripts/wiki_watchdog.py"
-LOG_PATH="$BASE_DIR/outputs/watchdog.log"
+SENTINEL_DIR="$BASE_DIR/sentinel"
+LOG_PATH="$SENTINEL_DIR/watchdog.log"
 
 echo "------------------------------------------"
 echo "正在啟動 Wiki-Watchdog Sentinel..."
 echo "------------------------------------------"
+
+# 0. 建立管理目錄
+mkdir -p "$SENTINEL_DIR"
 
 # 1. 檢查虛擬環境
 if [ ! -d "$VENV_PATH" ]; then
@@ -36,6 +40,7 @@ sleep 2
 NEW_PID=$(ps aux | grep wiki_watchdog.py | grep -v grep | awk '{print $2}')
 if [ ! -z "$NEW_PID" ]; then
     echo "啟動成功！PID: $NEW_PID"
+    echo "管理目錄: $SENTINEL_DIR"
     echo "日誌路徑: $LOG_PATH"
     echo "------------------------------------------"
     tail -n 3 "$LOG_PATH"
