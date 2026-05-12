@@ -1,11 +1,13 @@
 # 知識庫管理與維護協定 (Active Wiki Protocol)
 
 > [!IMPORTANT]
-> **警告：本知識庫嚴格執行「原子化更新協定」。**
-> 任何未同步更新 `INDEX.md` 與 `log.md` 的行為皆被視為嚴重的系統錯誤 (System Bug)。
+> **警告：本知識庫嚴格執行「原子化更新協定」**
+> 任何未同步更新 `INDEX.md` 與 `log.md` 的行為皆被視為嚴重的系統錯誤 (System Bug)
+> `最高開發行為準則`於 $HOME/.config/agents/AGENTS.md; 本份專案文件之外的約束必須遵守`最高開發行為準則`.
 
 ## 強制執行清單 (Post-Action Checklist)
 每次建立或修改 Wiki 頁面後，你**必須**確認以下事項已完成：
+
 1. [ ] **更新 INDEX**: 在 `wiki/INDEX.md` 找到對應分類，手動加入 `[[新頁面名稱]]`。
 2. [ ] **建立雙向聯結**: 
    - 新頁面底部必須有「相關主題」區塊。
@@ -44,13 +46,13 @@
 ## YAML 元數據規範 (Metadata Standards)
 所有新建或修改的 Wiki 頁面，必須在其最頂端包含 YAML Header。
 **【嚴格格式與防竄改邊界】**：
-1. Header 必須由兩組 `----` (四個連字號) 包夾，格式建議如下：
-   ----
+1. Header 必須由兩組 `---` (3個連字號) 包夾，格式建議如下：
+   ---
    name: [頁面標題]
    description: [內容摘要描述]
-   contributors: [Antigravity, 其他Agent名稱]
-   ----
-2. **【禁止竄改】**：在新增或修改此 YAML 區塊時，**絕對不可更動或刪除下層（第二組） `----` 之後的任何正文內容**。
+   contributors: [human/foo, 其他Agent名稱]
+   ---
+2. **【禁止竄改】**：在新增或修改此 YAML 區塊時，**絕對不可更動或刪除下層（第二組） `---` 之後的任何正文內容**。
 3. **【禁止署名污染】**：**嚴禁**在正文底部加入「由 XXX 生成」、「撰寫者：XXX」等簽名。多 Agent 協作的足跡追蹤，一律透過更新 YAML 的 `contributors` 陣列，以及將詳細動作寫入 `wiki/log.md` 來完成。
 
 ## 純文字與標準 Markdown 規範 (No-Emoji Policy)

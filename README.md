@@ -1,3 +1,13 @@
+---
+name:          "README.md"
+description:   "專案說明文件"
+created_date:  "2026/04/22"
+modified_date: "2026/05/12"
+project_version: "1.3.1"
+document_version: "1.1.0"
+agent_sign: ['Antigravity']
+---
+
 # LLM-Wiki: 主動式個人知識庫 (Active Personal Knowledge Base)
 
 一個基於「自動化監控」與「層次化編譯」理念構建的個人知識庫。不同於傳統的靜態 Wiki 或單純的 RAG 檢索，本專案強調知識的**主動複利**與**自動維護**。
