@@ -29,6 +29,12 @@
 - **`sentinel/`**: 管理心臟。包含 `tasks.md` (任務清單) 與 `states.json` (雜湊庫)。
 - **`outputs/`**: 正式報告產出。
 
+## 任務歸檔與重置協定 (Task Archiving & Reset)
+當 `sentinel/tasks.md` 內的所有任務皆標記為 `[x]` 且已完成 Phase 2 生成後，必須執行以下結案動作：
+1. **建立歸檔**: 在 `sentinel/archive/` 目錄下建立以日期命名的備份檔案與摘要資料夾（例如 `tasks_20260513.md` 與 `summaries_20260513/`）。將 `sentinel/summaries/` 下對應批次的摘要檔移入。
+2. **重置清單**: 清空 `sentinel/tasks.md`，並清空 `sentinel/summaries/`，為下一批原始素材的 Ingest 騰出空間。
+3. **終端狀態同步**: 在 `sentinel/hot.md` 紀錄該批次任務已全數落地並完成歸檔，並同步至 Redis 記憶體。
+
 ## 上下文管理機制 (Context Management)
 1. **啟動掛載**: 每次對話開始或處理新任務時，必須優先讀取 `purpose.md` (確認知識收斂方向) 與 `sentinel/hot.md` (掌握近期上下文)。
 2. **結束卸載**: 每次完成工作或對話告一段落時，必須主動更新 `sentinel/hot.md`，簡述剛才的進度與下一步計畫。
