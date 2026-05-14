@@ -131,7 +131,7 @@ class WikiHandler(FileSystemEventHandler):
                 "model": MODEL, 
                 "prompt": f"你是一個{role}。請針對以下{ext}內容進行繁體中文摘要。內容：\n\n{content}",
                 "stream": False
-            }, timeout=30)
+            }, timeout=300)
             return response.json().get("response", "無法產生摘要")
         except: return "Ollama 服務暫時無法回應。"
 

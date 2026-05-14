@@ -2,13 +2,19 @@
 name:          "CHANGELOG.md"
 description:   "專案變更日誌"
 created_date:  "2026/04/22"
-modified_date: "2026/05/12"
-project_version: "1.3.1"
-document_version: "1.0.0"
+modified_date: "2026/05/14"
+project_version: "1.3.2"
+document_version: "1.0.1"
 agent_sign: ['Antigravity']
 ---
 
 # 變更日誌 (CHANGELOG)
+
+## [1.3.2] - 2026-05-14
+### 修復與治理強化 (Changed)
+- **知識落地閉環補強**: 將「最小落地契約 (Minimum Landing Contract)」正式寫入 `AGENTS.md`，禁止零位元組 Wiki 頁面，並要求所有新頁面必須具備來源、最小正文、雙向連結、`INDEX` 掛載與狀態記錄。
+- **知識庫健康修復**: 完成 orphan pages 與 broken links 清理，將目前 Wiki 內部斷鏈與孤島頁數量降為 0。
+- **工具型主題落地診斷**: 針對 `redis-submemory` 建立落地鍊路診斷與綜述頁，釐清 `raw/` 素材缺失、Redis 同步失敗與入口頁占位之間的責任分界。
 
 ## [1.3.1] - 2026-04-23
 ### 優化與系統對齊復原 (Changed)
