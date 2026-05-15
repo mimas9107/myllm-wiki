@@ -30,6 +30,13 @@
 - **`sentinel/`**: 管理心臟。包含 `tasks.md` (任務清單) 與 `states.json` (雜湊庫)。
 - **`outputs/`**: 正式報告產出。
 
+### 符號連結治理規範 (Symlink Governance)
+為了防止 Agent 在初始化或自動掃描過程中被大型外部開發目錄（如掛載的開發資料夾）「絆住」或導致 Token/資源浪費，所有 Agent **必須**遵循以下原則：
+1. **識別先行 (Identification First)**：進入 `raw/` 目錄時，應優先透過 `ls -F` 或 `ls -ld` 識別出哪些目錄為 Symlink。
+2. **遞迴禁令 (Recursive Ban)**：**絕對禁止**在未獲使用者指令前，對任何 Symlink 執行遞迴操作（如 `grep -r`, `glob`, `ls -R`）。
+3. **按需探訪 (On-Demand Access)**：Symlink 被視為「揮發性外部知識源」，僅在對話涉及該路徑或使用者明確下令採集時才可進入。
+4. **防絆預警 (Trap Warning)**：若需進入 Symlink 讀取資訊，應採取精確路徑讀取，嚴禁對其執行廣域模糊檢索。
+
 ## 最小落地契約 (Minimum Landing Contract)
 為了避免出現「零位元組頁面」、「只有檔名沒有內容」或「無來源的正式知識頁」，任何新建的 `wiki/` 頁面都**必須**滿足以下最低條件；少一項都不得視為正式落地完成：
 
@@ -114,3 +121,13 @@
 
 ---
 *維護者：Antigravity | 協定版本：1.5.0*
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+Rules:
+- ALWAYS read graphify-out/GRAPH_REPORT.md before reading any source files, running grep/glob searches, or answering codebase questions. The graph is your primary map of the codebase.
+- IF graphify-out/wiki/index.md EXISTS, navigate it instead of reading raw files
+- For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
