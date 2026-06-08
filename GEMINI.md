@@ -76,7 +76,7 @@
 3. **終端狀態同步**: 在 `sentinel/hot.md` 紀錄該批次任務已全數落地並完成歸檔，並同步至 Redis 記憶體。
 
 ## 上下文管理機制 (Context Management)
-1. **啟動掛載**: 每次對話開始或處理新任務時，必須優先讀取 `purpose.md` (確認知識收斂方向) 與 `sentinel/hot.md` (掌握近期上下文)。
+1. **啟動掛載**: 每次對話開始或處理新任務時，必須優先讀取 `purpose.md` (確認知識收斂方向)、`wiki/SCHEMA.md` (schema 規則) 與 `sentinel/hot.md` (掌握近期上下文)。
 2. **結束卸載**: 每次完成工作或對話告一段落時，必須主動更新 `sentinel/hot.md`，簡述剛才的進度與下一步計畫。
 
 ## 兩階段編譯工作流 (Two-Phase Ingest)

@@ -2,13 +2,26 @@
 name:          "CHANGELOG.md"
 description:   "專案變更日誌"
 created_date:  "2026/04/22"
-modified_date: "2026/05/14"
-project_version: "1.3.2"
-document_version: "1.0.1"
+modified_date: "2026/06/08"
+project_version: "1.4.0"
+document_version: "1.1.0"
 agent_sign: ['Antigravity']
 ---
 
 # 變更日誌 (CHANGELOG)
+
+## [1.4.0] - 2026-06-08
+### 新增 (Added)
+- **SCHEMA.md 規範檔**: 定義 frontmatter 11 個必填欄位、5 種頁面類型、tag 分類、page threshold、provenance markers、INDEX/log 維護規則、`raw/` 唯讀宣告與 `states.json` 去重機制。
+- **4 個 Wiki 技能頁面**: `llm-wiki-lint-知識庫健康檢查`、`llm-wiki-flush-知識沖刷技能`、`llm-wiki-access-知識庫存取技能`、`llm-wiki-serendipity-知識隨機碰撞`。
+- **Frontmatter 回填腳本**: `scripts/backfill-frontmatter.py` 保守式補全缺失欄位，支援 3-dash/4-dash fence 自動偵測，不修改 body 內容。
+
+### 變更 (Changed)
+- **llm-wiki-lint Skill 重構**: 改為讀取 `wiki/SCHEMA.md` 驅動的 8-check protocol（孤島/斷鏈/前置資料完整性/標籤合法性/頁面大小/過期內容/品質信號/雙向連結門檻）。
+- **AGENTS.md 啟動掛載**: 新增 `wiki/SCHEMA.md` 為會話啟動必讀檔案，確保 Schema 規則自動內化。
+
+### 修復 (Fixed)
+- **Frontmatter 邊界識別**: 修正 4-dash (`----`) fence 被誤判為兩個 3-dash fence，導致欄位插入 body 末尾的 bug。
 
 ## [1.3.2] - 2026-05-14
 ### 修復與治理強化 (Changed)
@@ -22,10 +35,10 @@ agent_sign: ['Antigravity']
 - **任務清單與摘要路徑優化**: 將 `outputs/pending_tasks.md` 遷移至 `sentinel/pending_tasks.md`，並將 `outputs/summaries` 遷移至 `sentinel/summaries`，強化管理心臟職責。
 - **無表情符號規範 (No-Emoji Policy)**: 建立純文字與標準 Markdown 規範，移除全專案所有 Emoji，提升終端機相容性與專業度。
 - **嚴格元數據追蹤 (Strict Metadata)**: 導入 YAML Frontmatter 邊界規範，強制以 `contributors: []` 追蹤貢獻，徹底解決多 Agent 協作的正文簽名污染。
-- **防呆與權限邊界重建**: 
+- **防呆與權限邊界重建**:
   - `llm-wiki-flush`: 實作嚴格路徑護欄，設立 `raw/` 與 `sentinel/` 絕對禁區，強制實施歸檔而非刪除。
   - `llm-wiki-lint`: 限定唯讀掃描，報告強制隔離至 `sentinel/`，確保檢測不污染產出區。
-  - `llm-wiki-serendipity`: 寫入最高權限覆寫規則，阻斷 Agent 自主觸發，保證純人工啟動。
+  - `llm-wiki-serendipity`: 寫入最高權限覆寫規則，阻斷 Agent 自主觸發，保證純人工啟動.
 ===
 
 ## [1.3.0] - 2026-04-23

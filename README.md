@@ -2,9 +2,9 @@
 name:          "README.md"
 description:   "專案說明文件"
 created_date:  "2026/04/22"
-modified_date: "2026/05/14"
-project_version: "1.3.2"
-document_version: "1.1.1"
+modified_date: "2026/06/08"
+project_version: "1.4.0"
+document_version: "1.2.0"
 agent_sign: ['Antigravity']
 ---
 
@@ -21,6 +21,13 @@ agent_sign: ['Antigravity']
 - **Persistent Compounding (持續複利)**: 交叉引用、實體頁面更新、矛盾檢測與總結合成皆由 AI 自動完成。知識不再隨單次問答而消散，而是會隨著時間的推移而產生複利效應，變得越發豐富與立體。
 
 為了避免知識落地過程出現空白頁、孤島頁或只有檔名沒有內容的占位頁，本專案現已將「最小落地契約」納入治理規範：任何正式 `wiki/` 頁面都必須具備可追溯來源、最小正文內容、雙向連結、`INDEX` 掛載與狀態記錄。
+
+## 新功能：SCHEMA 驅動治理 (v1.4.0)
+
+- **Frontmatter 標準化**: `wiki/SCHEMA.md` 定義 11 個必填欄位、5 種頁面類型、標籤分類體系。
+- **健康檢查自動化**: `llm-wiki-lint` 升級為讀取 SCHEMA 的 8-check protocol（孤島/斷鏈/前置資料/標籤/大小/過期/信號/雙向連結）。
+- **知識沖刷管線**: `llm-wiki-flush` 定義 `outputs/` → `wiki/` 的結構化遷移協議。
+- **自動補全工具**: `scripts/backfill-frontmatter.py` 保守式插入缺失欄位，支援 3/4-dash fence，不動 body。
 
 ## 系統架構 (Architecture)
 
