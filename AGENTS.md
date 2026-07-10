@@ -1,1 +1,145 @@
-GEMINI.md
+# 知識庫管理與維護協定 (Active Wiki Protocol)
+
+> [!IMPORTANT]
+> **警告：本知識庫嚴格執行「原子化更新協定」**
+> 任何未同步更新 `INDEX.md` 與 `log.md` 的行為皆被視為嚴重的系統錯誤 (System Bug)
+> `最高開發行為準則`於 $HOME/.config/agents/AGENTS.md; 本份專案文件之外的約束必須遵守`最高開發行為準則`.
+
+## 強制執行清單 (Post-Action Checklist)
+每次建立或修改 Wiki 頁面後，你**必須**確認以下事項已完成：
+
+1. [ ] **更新 INDEX**: 在 `wiki/INDEX.md` 找到對應分類，手動加入 `[[新頁面名稱]]`。
+2. [ ] **建立雙向聯結**: 
+   - 新頁面底部必須有「相關主題」區塊。
+   - 回頭在被引用的舊頁面加入指向新頁面的連結。
+3. [ ] **紀錄 Log**: 在 `wiki/log.md` 底部新增一筆維護紀錄。
+4. [ ] **標註任務**: 如果是處理 `sentinel/tasks.md` 的任務，必須將其標記為 `[x]`。
+5. [ ] **滿足最小落地契約**: 新頁面不得為空白頁，且必須符合下方「最小落地契約」。
+
+---
+
+## 如何正確掛載索引 (Indexing Guide)
+如果你不知道新頁面該放在 `INDEX.md` 的哪裡：
+1. **全文檢索關鍵字**: 執行 `rg "相關關鍵字" wiki/` 找出其他 Agent 把它放哪。
+2. **參考現有分類**: 讀取 `wiki/INDEX.md` 的目錄結構。
+3. **主動建議新分類**: 如果現有分類都不適合，請主動在 `INDEX.md` 建立新子類別，嚴禁讓頁面成為孤島。
+
+## 資料夾規則 (Governance)
+- **`raw/`**: 絕對唯讀。禁止修改、禁止寫入、禁止刪除。
+- **`wiki/`**: 核心知識區。Agent 全權維護。
+- **`sentinel/`**: 管理心臟。包含 `tasks.md` (任務清單) 與 `states.json` (雜湊庫)。
+- **`outputs/`**: 正式報告產出。
+- **`.cache/`**: 存放編譯期間的萃取暫存檔與中介資料，可隨時清空。
+- **`scratch/`**: 存放一次性操作草稿與 Agent 的運算白板。
+- **`scripts/`**: 存放所有跨 Agent 共用的維護與萃取工具 (如 `wiki_fixer.py`, `extract_text.py`)。
+
+### 符號連結治理規範 (Symlink Governance)
+為了防止 Agent 在初始化或自動掃描過程中被大型外部開發目錄（如掛載的開發資料夾）「絆住」或導致 Token/資源浪費，所有 Agent **必須**遵循以下原則：
+1. **識別先行 (Identification First)**：進入 `raw/` 目錄時，應優先透過 `ls -F` 或 `ls -ld` 識別出哪些目錄為 Symlink。
+2. **遞迴禁令 (Recursive Ban)**：**絕對禁止**在未獲使用者指令前，對任何 Symlink 執行遞迴操作（如 `grep -r`, `glob`, `ls -R`）。
+3. **按需探訪 (On-Demand Access)**：Symlink 被視為「揮發性外部知識源」，僅在對話涉及該路徑或使用者明確下令採集時才可進入。
+4. **防絆預警 (Trap Warning)**：若需進入 Symlink 讀取資訊，應採取精確路徑讀取，嚴禁對其執行廣域模糊檢索。
+
+## 最小落地契約 (Minimum Landing Contract)
+為了避免出現「零位元組頁面」、「只有檔名沒有內容」或「無來源的正式知識頁」，任何新建的 `wiki/` 頁面都**必須**滿足以下最低條件；少一項都不得視為正式落地完成：
+
+1. **禁止空白正式頁**:
+   - 嚴禁建立零位元組 `.md` 檔案作為正式 Wiki 頁面。
+   - 若內容尚未成熟，應先放在 `outputs/`、`scratch/` 或維持在對話分析階段，禁止先創建空白 `wiki/` 頁面占位。
+
+2. **必須有明確來源 (Source Required)**:
+   - 新頁面必須至少指向一個可追溯來源。
+   - 來源不限定只能來自 `raw/`；也可以是專案 `README.md`、`SKILL.md`、PDF、PPTX、原始專案目錄或其他明確文件。
+   - 若完全沒有可追溯來源，則不得建立正式 `wiki/` 頁面。
+
+3. **必須有最小正文內容 (Non-Empty Body)**:
+   - 除 YAML Header 外，正文至少必須包含：
+     - 一句頁面定位或摘要
+     - 一個「相關主題」區塊
+     - 一個來源連結或來源鍊路區塊
+
+4. **必須有雙向連結 (Bidirectional Minimum)**:
+   - 新頁面至少要有一個指向既有 Wiki 頁面的內部連結（outgoing link）。
+   - 至少要有一個既有 Wiki 頁面回頭連到該新頁面（incoming link）。
+   - 僅在 `INDEX.md` 被掛載，不足以取代雙向聯結要求。
+
+5. **必須完成掛載與狀態記錄 (Index + State Required)**:
+   - 頁面必須掛入 `wiki/INDEX.md`
+   - 頁面異動必須記錄到 `wiki/log.md`
+   - 本輪工作摘要必須同步寫入 `sentinel/hot.md`
+
+6. **允許 Stub，但 Stub 也必須完整**:
+   - 若頁面只是臨時建立的主題入口頁（Stub），仍必須滿足本契約全部要求。
+   - Stub 與 Full Page 的差別只能是內容深度不同，不能是結構完整度不同。
+
+## 任務歸檔與重置協定 (Task Archiving & Reset)
+當 `sentinel/tasks.md` 內的所有任務皆標記為 `[x]` 且已完成 Phase 2 生成後，必須執行以下結案動作：
+1. **建立歸檔**: 在 `sentinel/archive/` 目錄下建立以日期命名的備份檔案與摘要資料夾（例如 `tasks_20260513.md` 與 `summaries_20260513/`）。將 `sentinel/summaries/` 下對應批次的摘要檔移入。
+2. **重置清單**: 清空 `sentinel/tasks.md`，並清空 `sentinel/summaries/`，為下一批原始素材的 Ingest 騰出空間。
+3. **終端狀態同步**: 在 `sentinel/hot.md` 紀錄該批次任務已全數落地並完成歸檔，並同步至 Redis 記憶體。
+
+## 上下文管理機制 (Context Management)
+1. **啟動掛載**: 每次對話開始或處理新任務時，必須優先讀取 `purpose.md` (確認知識收斂方向)、`wiki/SCHEMA.md` (schema 規則) 與 `sentinel/hot.md` (掌握近期上下文)。
+2. **結束卸載**: 每次完成工作或對話告一段落時，必須主動更新 `sentinel/hot.md`，簡述剛才的進度與下一步計畫。
+
+## 兩階段編譯工作流 (Two-Phase Ingest)
+針對 `raw/` 素材的知識萃取，必須嚴格執行「先分析，後生成」：
+1. **讀取任務**: `cat sentinel/tasks.md` 與對應的原始素材。
+2. **Phase 1 (分析階段)**: 撰寫一份《分析草稿》(可存放於 `scratch/` 或直接輸出於對話中)，列出素材中的實體、核心概念，以及「是否與現有知識衝突或互補」。
+3. **Phase 2 (生成階段)**: 確認草稿邏輯無誤後，正式撰寫或更新對應的 `wiki/` 頁面。
+4. **最小落地檢查**: 若建立新頁面，必須逐條驗證其符合「最小落地契約」。
+5. **維護索引與日誌**: 將新頁面加入 `wiki/INDEX.md`，並將異動紀錄寫入 `wiki/log.md`。
+6. **更新快取與回報**: 更新 `sentinel/hot.md`，並向使用者回報任務完成。
+
+## 互動式問答落地協定 (Interactive Q&A Protocol)
+針對對話中產生的新推論、技術總結或問答結果，必須遵循以下導向：
+1. **優先導向 outputs/**：所有對話產出的「技術報告」、「問答結案」或「結構化總結」，優先寫入 `outputs/` 目錄。
+2. **知識緩衝區 (Buffer Zone)**：`outputs/` 內的檔案被視為臨時知識緩衝。這些知識積累到一定數量後，**不得自動併入 wiki/**。
+3. **沖刷機制 (Flush Mechanism)**：知識從 `outputs/` 落地到 `wiki/` 的觸發條件僅限：
+    - 使用者明確下達「落地」或「併入維基」指令。
+    - 透過特定的 Skill (如 `npx skills run flush-wiki`) 進行結構化遷移。
+4. **條件導向 wiki/**：若問答結果具備長期維護價值，**必須**比照「兩階段編譯」：
+    - 即使是互動產生的知識，也必須先在對話中呈現「分析草稿」。
+    - 嚴禁未經確認直接修改 `wiki/` 核心區。
+5. **嚴禁推論污染**：嚴禁將未經證實的「AI 推論」或「暫時性討論」混入正式的 Wiki 頁面中。
+
+---
+
+## YAML 元數據規範 (Metadata Standards)
+所有新建或修改的 Wiki 頁面，必須在其最頂端包含 YAML Header。
+**【嚴格格式與防竄改邊界】**：
+1. Header 必須由兩組 `---` (3個連字號) 包夾，格式建議如下：
+   ---
+   name: [頁面標題]
+   description: [內容摘要描述]
+   contributors: [human/foo, 其他Agent名稱]
+   ---
+2. **【禁止竄改】**：在新增或修改此 YAML 區塊時，**絕對不可更動或刪除下層（第二組） `---` 之後的任何正文內容**。
+3. **【禁止署名污染】**：**嚴禁**在正文底部加入「由 XXX 生成」、「撰寫者：XXX」等簽名。多 Agent 協作的足跡追蹤，一律透過更新 YAML 的 `contributors` 陣列，以及將詳細動作寫入 `wiki/log.md` 來完成。
+
+## FAE 原始資料萃取規範 (FAE Data Extraction)
+
+當處理 `/usr/local/home/mimas/justin_liu/` 下的 FAE 原始資料時，所有 Agent **必須**使用統一的文字萃取腳本：
+
+```bash
+python3 scripts/extract_text.py <file_or_directory>
+```
+
+- 支援格式：PDF（有文字層）、DOCX、PPTX、XLSX
+- 不支援格式：純掃描圖檔 PDF、二進位 PPT/XLS（舊格式）
+- 成功回傳 `exit 0` + 分段純文字；失敗回傳 `exit 1`
+- 無需額外安裝套件，僅依賴系統已裝工具（pdftotext / pandoc / libreoffice）
+- Agent 若缺少任一工具，腳本會自動跳過該後端、嘗試下一種
+
+此腳本確保多 Agent 對同一批原始資料產出一致的文字輸入，避免因工具鏈差異導致萃取結果不同。
+
+---
+
+## 純文字與標準 Markdown 規範 (No-Emoji Policy)
+為了確保知識庫的專業性與跨平台相容性（特別是在純文字終端環境），本專案嚴格限制表情符號 (Emoji) 的使用：
+1. **全面禁用 Emoji**：在建立新標題、清單或內文時，**絕對禁止**使用任何 Emoji 符號。
+2. **標準格式優先**：請僅使用標準的 Markdown 語法（如 `#`、`-`、`*`、`> `）來區分結構與重點。
+
+---
+*維護者：Antigravity | 協定版本：1.6.0*
+

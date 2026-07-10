@@ -1,0 +1,426 @@
+{
+  "/opt/myllm-wiki/raw/How to Install PostgreSQL on Debian 13 _ RoseHosting.pdf": {
+    "hash": "78c115e795ec9371411b628e3f182ccb5bf300f339f5e26d308fd34f58b81080",
+    "last_processed": "2026-04-24 18:07:22"
+  },
+  "/opt/myllm-wiki/raw/interview/resume-104-20250916.pdf": {
+    "hash": "e9237c6844fa7308fb669c1da905044ce5459cf434161367f708a6154722c0b4",
+    "last_processed": "2026-04-24 18:07:22"
+  },
+  "/opt/myllm-wiki/raw/interview/my-side-project-resume04.pdf": {
+    "hash": "7b969db47432730dd59f451af53664b13a8c5e11e030e578c45bba32c20151e3",
+    "last_processed": "2026-04-24 18:07:22"
+  },
+  "/opt/myllm-wiki/raw/interview/劉志文-Justin_Liu-在職訓練-產業人才投資計畫.pdf": {
+    "hash": "d3fa971bbc0001c2e861d078a2c733edacfecbca68f34960e4f2e3cb1e9e4241",
+    "last_processed": "2026-04-24 18:07:22"
+  },
+  "/opt/myllm-wiki/raw/interview/智慧藥盒v5_Final.pdf": {
+    "hash": "1fb40419a556238bc5b5d2d21e0430c02d34277e56d30fe0221fa00870132e73",
+    "last_processed": "2026-04-24 18:07:22"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/筆記 Sway + Wayland 剪貼簿.md": {
+    "hash": "3b8dd9b74d4b113e766f12722b63280015a21e2007b517329426c0bc01210be8",
+    "last_processed": "2026-04-24 18:15:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/Immich相簿架設與使用，界面長得最像Google相簿的照片管理軟體.md": {
+    "hash": "3242dee32a5e486cdb2ec2816973bdceb4ade9a122671de1f1623bae996266db",
+    "last_processed": "2026-04-24 18:15:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/picoreplayer相關.md": {
+    "hash": "f8358a6ab59e0cae2cee16a0232321de03826d0777195bafc6a24f6a1003016f",
+    "last_processed": "2026-04-24 18:16:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/筆記-我的render服務群.md": {
+    "hash": "a3c4a0a7164636e7fc8ebe1c506e38ba6c839502f679baf0674220baa393bb51",
+    "last_processed": "2026-04-24 18:16:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/Odoo 相關.md": {
+    "hash": "7f396cbabd226996e00f730558d85450fd1689b855990b9b36185a30ea6dcfa7",
+    "last_processed": "2026-04-24 18:17:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/筆記：Debian 13 (Trixie) 設定彩色 Man 手冊.md": {
+    "hash": "dc6d61e8deaf9e64ec5cb74b9a1d2fc7ca9e712db6976a6301bfc4fe80558b43",
+    "last_processed": "2026-04-24 18:17:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/C++ 檔案讀取重構報告：使用 std__fstream.md": {
+    "hash": "553a72ead3f9c3774db530a9050a0cea23589b2e1765abd64e9bc5d50c11dfc5",
+    "last_processed": "2026-04-24 18:18:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day77.md": {
+    "hash": "dd3581cc38c5b7f645467fc1f9f781a6a6c9e42381f6754de1274a1ef85a071f",
+    "last_processed": "2026-04-24 18:18:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day111.md": {
+    "hash": "ff5b7b2d25af67cea18c7d5e0eff56fab8401fe56d5db207281465553b0a88b5",
+    "last_processed": "2026-04-24 18:19:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day109.md": {
+    "hash": "78c359e4fc568fc231b9dbacc4f1ead604f4d3bd1530afb711265bd16e9aa267",
+    "last_processed": "2026-04-24 18:19:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day105.md": {
+    "hash": "6a43e2788d4786beea540ac4be4af40afa4a633f1ca3173ed41ba1e03ecc5388",
+    "last_processed": "2026-04-24 18:20:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day13.md": {
+    "hash": "f47e436f2877cff33635c979b5280f686c7ff3b6564500187ecd635d0b09c5f3",
+    "last_processed": "2026-04-24 18:20:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day103.md": {
+    "hash": "50984060468725252d7f0763a9deec5e3b2aefe4b6e7a6c800c0ff9acaa97cdb",
+    "last_processed": "2026-04-24 18:21:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[IoT] ESP32智慧燈控系統 完整安裝部署流程.md": {
+    "hash": "148bb1206a2437da87cef18a1f26f641f8997cff65a514ca5417e9877d15e505",
+    "last_processed": "2026-04-24 18:21:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/喚醒詞專案 Survey.md": {
+    "hash": "2620ab9806296855b2ec2de4e3610d87f7fda1132e19d7ea2aebd95234edf042",
+    "last_processed": "2026-04-24 18:22:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[筆記]ESP32 server中語法解釋 - 用匿名函式來處理非同步request.md": {
+    "hash": "98e342d868f9dd13573a241e4249b7260f591748fb548e7a4a330e66085d1aa9",
+    "last_processed": "2026-04-24 18:22:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[linux] 本地 ubuntu 架 llama.cpp for scrath.md": {
+    "hash": "370ce2428fd2e87dd1013c75e5ebef53031257ac136ef9ab74b1dbdd0874bf1f",
+    "last_processed": "2026-04-24 18:23:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[linux] VLC + mpv 本地串流技術整合專案筆記.md": {
+    "hash": "b4b2d295d7fc4b90f1b4dc1b9360e0029df3a5a58abfa632f4906ab790cbf800",
+    "last_processed": "2026-04-24 18:23:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[筆記] COSCUP2025-Day02.md": {
+    "hash": "0ac4382e484561bc505d7545b1489112e03638307d34534976352778b973f001",
+    "last_processed": "2026-04-24 18:24:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/fontconfig相關設定筆記.md": {
+    "hash": "18ecb9b439d3957a6c665a058da4ff50d40b9b40cc5a3930573f6f18456332f5",
+    "last_processed": "2026-04-24 18:24:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day85.md": {
+    "hash": "6cadb2c7187e7b5b70af4cf05ae0963bd18ddc2852e3b8beeb4500de25a6a577",
+    "last_processed": "2026-04-24 18:25:07"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day88.md": {
+    "hash": "57142af339f4eea7e4b58b2533c0c19c26dc0dfd91dd0156c70c6f2638298481",
+    "last_processed": "2026-04-24 18:25:37"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day94.md": {
+    "hash": "e733e42dbc18e1dfa945eea4470812944aebbc435ba4f307dc35e3718f752274",
+    "last_processed": "2026-04-24 18:26:08"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/關於房貸.md": {
+    "hash": "4b3ef4454c72dec213ff53f6ccee626635dc18856b41cd9750831012cdef90b6",
+    "last_processed": "2026-04-24 18:26:38"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[筆記] ESP32 CAM framebuffer相關.md": {
+    "hash": "d739ad75fd3715d615e2fd87b7bc5ff934f8ca0ca562ac80927793fd790677aa",
+    "last_processed": "2026-04-24 18:27:08"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/keyd - 修改按鍵CapsLock功能.md": {
+    "hash": "8910f7c16178bc9844fef18b32d8785e17372c7c40f7edf4a34bd6e99cce6125",
+    "last_processed": "2026-04-24 18:27:38"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[AI] 重新設定 ollama 下載 model存放位置.md": {
+    "hash": "985bb88b418d7b0d9a4e12713d170e029412b855192934e0496174d004d597e7",
+    "last_processed": "2026-04-24 18:33:48"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[ESP32] ESP32 I2S音頻總線學習筆記（二）：I2S讀取INMP441音頻數據.md": {
+    "hash": "1974fbe46e6ceb9bcf6942be9351db4bc764b3067d0d04f4b0a74e4f9acd6f15",
+    "last_processed": "2026-04-24 18:38:30"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/job-headhunter.md": {
+    "hash": "b5006579eb6233566cceb47c68dfd63d23cbdd53ab67543332cf85ea0df5608f",
+    "last_processed": "2026-04-24 18:38:49"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/job temp.md": {
+    "hash": "77ab984123ec355661e178e8f1bf89a119695f4da37516384c3af003a0949c08",
+    "last_processed": "2026-04-24 18:39:46"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Joplin]ESP32 CAM - 透過ESP32 CAM 腳位 Arduino UNO當 TTL上傳程式.md": {
+    "hash": "b30148e05fcb26c6e845bc71284a1600ac2e8265fe2ba3c4e001fb896bcad670",
+    "last_processed": "2026-04-24 18:40:26"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Joplin]Github ssh 連線.md": {
+    "hash": "a4986902cf1de9ae638e75c16c21de44f3f1769818a6e221b655da054374af48",
+    "last_processed": "2026-04-24 18:41:39"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Joplin]Linux解壓縮zip中文亂碼問題.md": {
+    "hash": "2698cd10d860ca12c692af04d13262e4bba5d9918e0a69944e5ed541ba1d2b99",
+    "last_processed": "2026-04-24 18:42:39"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Joplin]Linux變更檔案最後修改時間.md": {
+    "hash": "4c3774c1ed283a500bccbbb8d25df9883ebdbd543b4910f54d56ee46b2a876fb",
+    "last_processed": "2026-04-24 18:43:08"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Joplin]Raspberry 無實體鍵盤下, lightdm登入畫面啟動虛擬鍵盤設定法.md": {
+    "hash": "e19d6397655b595ce25d5f0f6df064e8f955c44d099b8ceeed96d5070cf3940b",
+    "last_processed": "2026-04-24 18:44:29"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Joplin]使用 wget 備份網站砍站.md": {
+    "hash": "a7c95d23889165d818dbd1a44df3d6afff6e7d099508b4b18958189af7c31936",
+    "last_processed": "2026-04-24 18:45:47"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Joplin]解決更新kernel後 initrd.img 容量過大.md": {
+    "hash": "949039d6c53877d86ee0474e291223655508493351823d05675c390cb3cf416d",
+    "last_processed": "2026-04-24 18:46:12"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[linux] GNOME vs dwm比較與設定概念.md": {
+    "hash": "ba2b0c1e766594aaae1bd451fb1d0f1d29be57381358f6c15b1e8a249f5cf411",
+    "last_processed": "2026-04-24 18:49:59"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[linux] icecc分散式編譯在內部網路建構.md": {
+    "hash": "76db4076916d29239e62f70142527a444ecb7b37c55c7edf898ad15ef7bea7e9",
+    "last_processed": "2026-04-24 18:54:19"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[linux] 我的usb wifi網卡問題排除.md": {
+    "hash": "62325960763714db653466826621d9b57e6832cbfcb948285c64ae6721295420",
+    "last_processed": "2026-04-24 18:57:20"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/linux連手機USB分享網路筆記.md": {
+    "hash": "415c14b4960aff51dac98670b20cc32d226545087c80067b10d8d92bcef21819",
+    "last_processed": "2026-04-24 18:58:03"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/n8n 本地端服務建置筆記.md": {
+    "hash": "43b43103c8810402848894d8f8b6582ac3b96d571f5a4fd4120d329aaed9f49c",
+    "last_processed": "2026-04-24 19:00:57"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[note]筆記備忘.md": {
+    "hash": "6ad001564af81c9694dac234079f5033d9927209e4c30fb6ab553c8b9d3e95d6",
+    "last_processed": "2026-04-24 19:02:20"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/ocr with esp32.md": {
+    "hash": "499f1dfd0d8097cfb53b0fdc1bd4c69511368676ab0e9a3e0100b19912edc365",
+    "last_processed": "2026-04-24 19:03:57"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/pandas iloc, loc差別_.md": {
+    "hash": "85442270db8eee674fa1b98043af835ef6e6065e2458f2ec0d16ea542893cde1",
+    "last_processed": "2026-04-24 19:04:53"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/Project review1_物聯網-AI程式設計應用實務-第 02期 Day78.md": {
+    "hash": "3a432cff3df780913a2a90edfb70522eb68dcca3c2ac752d96137d679b4fa436",
+    "last_processed": "2026-04-24 19:07:06"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Raspberry Pi] LED status_Button shutdown.md": {
+    "hash": "0053226796080e65501404d61ed4f36ddd2b46d6bcdcf6b317c66b12b1694803",
+    "last_processed": "2026-04-24 19:10:29"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Raspberry Pi] RPi4 華為手機 USB 網絡共享配置 - 禁止 CD-ROM 識別.md": {
+    "hash": "c799a4dd12e4bd8668fa815cd653f98ae51fbe5c983c11296569767291316b7e",
+    "last_processed": "2026-04-24 19:13:33"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/[Raspberry Pi] 使用 1.8 TFT LCD 模組要在 raspberry pi 4b_.md": {
+    "hash": "24730f95a22ee7dbedaf5ff00f4054331f0fda72613a13ef577a292869cc62c2",
+    "last_processed": "2026-04-24 19:16:14"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/testpaste.md": {
+    "hash": "000a0e0e6d161cb57a9df0115d9d8b620d79989b6304c248e04be0f231ef930d",
+    "last_processed": "2026-04-24 19:16:42"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/TinyML survey.md": {
+    "hash": "c9f356e5a361e3c363929cdb80aa94e714903725605a4fcabaf82c6e37dc6131",
+    "last_processed": "2026-04-24 19:21:42"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/其它暫存.md": {
+    "hash": "cd5691d6e5ca0fa6708682b273a6815a7ab1e4037110639a031d7f6886a44065",
+    "last_processed": "2026-04-24 19:24:34"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/在本地端建 Home Assistant server筆記.md": {
+    "hash": "9bbe26c53cff0d9b15a923d5bb7ffae7a62eb3f2aac16eaa7c7a0c8cfeedfa67",
+    "last_processed": "2026-04-24 19:25:48"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/專題相關.md": {
+    "hash": "26846ec50aa0aa29b4d67cbce8ff119311c435cc966e259563804036ccf5bad1",
+    "last_processed": "2026-04-24 19:30:48"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/批量 文字轉 qrcode_.md": {
+    "hash": "26d005bd8624a16db98114f82a9af23eeb78d5bc96a28e7c7b100d6a38bad427",
+    "last_processed": "2026-04-24 19:31:06"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/智慧藥盒以yolov7v訓練模型.md": {
+    "hash": "7f1be98c8965c8b34f51a636bbe3d44145b122a334ea82c41737d1f0af289679",
+    "last_processed": "2026-04-24 19:33:13"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/智慧藥盒 用 tensorflow lite 參考.md": {
+    "hash": "daaecf53220d74328a03257afd15b560849946a59178794325e102175627126d",
+    "last_processed": "2026-04-24 19:34:05"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day100.md": {
+    "hash": "1831ddfb1765aa7b60dbd0adb76f60a3357a531599735b65859ae932704e2fcf",
+    "last_processed": "2026-04-24 19:35:15"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day101.md": {
+    "hash": "1db0121a0b50914acb4593faeaf64133546255531b981b2e4a8dd370f573eb74",
+    "last_processed": "2026-04-24 19:38:44"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day104.md": {
+    "hash": "dce4f0a6b87bf351194b1684cd79fadce45b6c293bafc32aaef58f401a387b91",
+    "last_processed": "2026-04-24 19:41:12"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day106.md": {
+    "hash": "800dbf307bee6aa79e1ef17ea61c59db786536bdb9e5c65158aca71bbb9560d2",
+    "last_processed": "2026-04-24 19:43:35"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day107.md": {
+    "hash": "f225294effcc1c1b7553e80abc36f8e7869af95d08b0d4002fb14d96fbf3d933",
+    "last_processed": "2026-04-24 19:45:10"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day108.md": {
+    "hash": "76d47830f257460dd95db9a768903b3cf48a50454c9533ce370df4ef84bcd074",
+    "last_processed": "2026-04-24 19:46:05"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day10.md": {
+    "hash": "9d63a2c869a5ff71376968ebf9e2865e205e7bc45be3b8e65d51b822600a63b0",
+    "last_processed": "2026-04-24 19:47:23"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day110.md": {
+    "hash": "d396e71e61696fd7aeb54f2e530f83caac55e5f292c71807e32e3fd75ce2b338",
+    "last_processed": "2026-04-24 19:49:31"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day113.md": {
+    "hash": "b1c14c1fd4e9ea807f21007afda9e9379108392e6f52b16d67c762aaf0195ae1",
+    "last_processed": "2026-04-24 19:51:21"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day114.md": {
+    "hash": "a62870b5e21c3fea5fe938166b909178cf4ef29ac5b52bca423981e3fc632cad",
+    "last_processed": "2026-04-24 19:52:27"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day11.md": {
+    "hash": "9e509f4a3070c0a5db806e764694e2e5147ea870f9481d2e6fd8e2ee421979fa",
+    "last_processed": "2026-04-24 19:56:41"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day12.md": {
+    "hash": "c09f142c505e5fe329e1e545344f71893614653aba041a20c79c99d49acde03b",
+    "last_processed": "2026-04-24 19:58:02"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day14.md": {
+    "hash": "aacc867c32bd650fa49db1ea88c3664e3d202bd0f9c3a6a477d2fd92e3643e1b",
+    "last_processed": "2026-04-24 19:59:34"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day15.md": {
+    "hash": "033c5a54f0e2540aaf39c6e52b092d3e1d56fb7e580d3da3a2508488d67b3306",
+    "last_processed": "2026-04-24 20:04:02"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day16.md": {
+    "hash": "749d0a0d39b1f84ed22af11f20334a4ea2e5e3c8c2fbb67e7112603ac36e4850",
+    "last_processed": "2026-04-24 20:08:23"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day17.md": {
+    "hash": "d5420930dff85344804756eb6efa3aa2b917be5cb06ec4be31a1490f96150634",
+    "last_processed": "2026-04-24 20:11:53"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day18.md": {
+    "hash": "a149cf06ddf499ee885c9f759d8181911b15f3e49d72fce9c482d201f88bf5f5",
+    "last_processed": "2026-04-24 20:13:55"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day19.md": {
+    "hash": "ec30e75ffea913ba77638fde60e38787314ab13ece3e97bb8f3ff28c74614696",
+    "last_processed": "2026-04-24 20:16:03"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day20.md": {
+    "hash": "2c07deedb496a23f293821fa596c362d54593ae0a71fc13e28998a053881a4d5",
+    "last_processed": "2026-04-24 20:19:11"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day21.md": {
+    "hash": "c9f1588aac20fd9172a02733077d77186cb83834126dc1a77e95b8796b948b10",
+    "last_processed": "2026-04-24 20:21:45"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day22.md": {
+    "hash": "69d873ec51a111a8024b8f7e8877628e0e3d55679fa7a72e850c91e8d9d11a85",
+    "last_processed": "2026-04-24 20:22:51"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day23.md": {
+    "hash": "80eddcceaa34f312551fda32b0e34a9528229b7ba54252900f864da39abe73e8",
+    "last_processed": "2026-04-24 20:27:03"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day24.md": {
+    "hash": "fd4ef433f30fad2e703ac4085f1e4e9cd2659f8624f10593306f26fbfd09d5e9",
+    "last_processed": "2026-04-24 20:30:24"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1777025612812/物聯網-AI程式設計應用實務-第 02期 Day25.md": {
+    "hash": "cbc454a952ba55353f7ee433882398382e77cba8e7fbc05ff7e027d2bbbda951",
+    "last_processed": "2026-04-24 20:32:38"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記-我的render服務群.md": {
+    "hash": "786f559c5a38db50f9cbe8126b7524073247663a92e5c88a22808fe1d63212f6",
+    "last_processed": "2026-05-15 12:34:45"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記 在 Debian 13 自編 Sway + 完整依賴鏈.md": {
+    "hash": "6d26863fe39a9678d3bfe7ccaa1368ea1e6959446994c8b6382528764efd29db",
+    "last_processed": "2026-05-15 12:39:45"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記 Sway 外接螢幕設定與管理.md": {
+    "hash": "f834011763559e52e378b9a3d56401f6d57857fb54d9fa0b460146b01c224e96",
+    "last_processed": "2026-05-15 12:42:50"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記 筆電蓋上不會休眠、常駐系統的設定.md": {
+    "hash": "4747d8cd24e51ed50a9983df99a708e7006ab412d5a9afa28d61063569453b81",
+    "last_processed": "2026-05-15 12:46:57"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記 facebook用的寬內文stylus css,來自 facebook wide樣式_.md": {
+    "hash": "1311d8d0b19df9b5b54f228207b4adc4e3d45b6927bbfb993014f68ee3f7f866",
+    "last_processed": "2026-05-15 12:49:14"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記 Armbian APT Source _ Mirror 問題排查筆記.md": {
+    "hash": "691783dc4647686352f85324cd2790846c9c086357cae4931525519180de276a",
+    "last_processed": "2026-05-15 12:52:10"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記 以Ansible進行家中的設定環境管理.md": {
+    "hash": "2ca0bf7cbe18f73315d11eea7b060a9f697ad5b08d84a9f5a762fa9da8a0c5d2",
+    "last_processed": "2026-05-15 12:54:20"
+  },
+  "/opt/myllm-wiki/raw/esp-miao-architecture-knowledge-discussion-from-batch-to-stream-1.md": {
+    "hash": "a731be8dafeec53e477db28aa47aa52ab1c8c25cdad64b7a54e85f6cd4aaf2b6",
+    "last_processed": "2026-05-19 14:10:13"
+  },
+  "/opt/myllm-wiki/raw/fix_wifi_stability/README.md": {
+    "hash": "c4ce092d287d10aa02781a5935a4a8fdae9d780c927b0a973dc2a2c5a6af84e3",
+    "last_processed": "2026-05-22 12:24:46"
+  },
+  "/opt/myllm-wiki/raw/multiplewifi/README.md": {
+    "hash": "86a2b7e5583effc2c7595abbcc1456ad1adcd976c407b932db64a0da98eceb35",
+    "last_processed": "2026-05-22 12:29:46"
+  },
+  "/opt/myllm-wiki/raw/workshop/notes1.md": {
+    "hash": "7787ae2918d2999d9f15efb1efb425f18a012c101f167883183064019115de32",
+    "last_processed": "2026-05-22 12:32:43"
+  },
+  "/opt/myllm-wiki/raw/multiplewifi/README-multiplewifi.md": {
+    "hash": "86a2b7e5583effc2c7595abbcc1456ad1adcd976c407b932db64a0da98eceb35",
+    "last_processed": "2026-05-22 12:41:27"
+  },
+  "/opt/myllm-wiki/raw/fix_wifi_stability/README-fix-wifi-stability.md": {
+    "hash": "c4ce092d287d10aa02781a5935a4a8fdae9d780c927b0a973dc2a2c5a6af84e3",
+    "last_processed": "2026-05-22 12:43:03"
+  },
+  "/opt/myllm-wiki/raw/workshop/workshop-notes1.md": {
+    "hash": "7787ae2918d2999d9f15efb1efb425f18a012c101f167883183064019115de32",
+    "last_processed": "2026-05-22 12:45:01"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記 事件紀錄-Debian 13 (Trixie) apt upgrade NVIDIA DKMS 編譯失敗.md": {
+    "hash": "4de07adb6de3ca4b17930c6829a7ddc1aaf3c8f64ebba94831146edf66e6c320",
+    "last_processed": "2026-06-02 11:14:28"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記 Debian 13 (X240 8GB RAM) Android Flutter 開發環境建置與優化重整.md": {
+    "hash": "7f137efc62a38f8cdc2ecbf005a27b624694bf239417ba0a2004685be0511506",
+    "last_processed": "2026-06-03 16:57:24"
+  },
+  "/opt/myllm-wiki/raw/Android-init-process-stepbystep.md": {
+    "hash": "8a26351d6df34915049fa97285fab901d3482b88e63a5216f1dacd74ec2fae3a",
+    "last_processed": "2026-06-03 18:18:43"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/筆記 Debian下雙網卡分流下載-大流量不卡頓的策略路由設置.md": {
+    "hash": "989bddae700c65c6fc0cd669893c6e6858ea63e018843b3a394c34f49578c589",
+    "last_processed": "2026-06-05 10:30:51"
+  },
+  "/opt/myllm-wiki/raw/HackMD_User_1778819090329/notes_sway-wayland_wl-gammarelay-rs_202606071006.md": {
+    "hash": "93cc16932113f6e509300a95835da2d2e393ec93b88a5a004e84fd628447d790",
+    "last_processed": "2026-06-07 10:23:16"
+  },
+  "/opt/myllm-wiki/raw/chat-‎影像處理二值化的概念與Google Gemini討論職涯.md": {
+    "hash": "69030c8743efc7ddba0aeb8cf032096e109030ef5febb126eef0f967b4e75457",
+    "last_processed": "2026-06-26 18:46:46"
+  }
+}

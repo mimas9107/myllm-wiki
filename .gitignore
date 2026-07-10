@@ -18,3 +18,9 @@ node_modules/
 # 忽略測試用的 Skill 暫存
 test-skill/
 scratch/
+
+# agent cache.
+.gemini
+.antigravitycli
+.claude
+

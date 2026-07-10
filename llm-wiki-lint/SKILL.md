@@ -10,14 +10,16 @@ description: 執行知識庫健康檢查，尋找孤島頁面 (Orphans)、死結
 2. **報告隔離 (Report Isolation)**：掃描結果**必須且只能**寫入 `sentinel/lint_report.md`。絕對禁止寫入 `outputs/`，以免污染知識產出區。
 3. **人工授權 (User Authorization)**：產生報告後，Agent 必須停止動作並等待 User 檢閱。嚴禁未經 User 同意便自動修復 INDEX 或刪除檔案。
 
-## 前置讀取 (Orientation)
+## 前置讀取與自動化執行 (Orientation & Execution)
 
-執行任何檢查前，**必須**讀取以下檔案：
-1. `wiki/SCHEMA.md` — 作為所有檢查的標準依據
-2. `wiki/INDEX.md` — 作為孤島/索引完整性檢查的基准
-3. `wiki/log.md`（最近 20 行）— 了解近期變動，避免誤報剛建立的頁面
+為確保掃描一致性與效率，本 Skill 已內建自動化掃描腳本：
+1. **執行掃描**：請務必使用 python 執行以下內建腳本：
+   ```bash
+   python3 /opt/myllm-wiki/.agents/skills/llm-wiki-lint/scripts/lint.py
+   ```
+   該腳本會自動讀取 `wiki/SCHEMA.md` 作為標準依據，掃描 `wiki/*.md`，並將結果輸出至 `sentinel/lint_report.md`。
 
-## 檢查清單
+## 檢查清單 (自動腳本已涵蓋)
 
 ### 1. 孤島頁面 (Orphans)
 比對 `wiki/*.md` 檔案列表與 `wiki/INDEX.md` 中的 `[[內部連結]]`，列出所有未被 INDEX 紀錄的檔案。
